@@ -1038,6 +1038,20 @@ class PlayState extends MusicBeatState
 				sprites.add(IPADBG);
 				add(IPADBG);
 
+			case 'dale':
+				curStage = 'dale';
+				defaultCamZoom = 0.9;
+				var dalebg:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('dale_and_dingle/bg', 'shared'));
+				dalebg.screenCenter();
+				sprites.add(dalebg);
+				add(dalebg);
+
+				var meet:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('dale_and_dingle/meet', 'shared'));
+				meet.scrollFactor.set(1.1, 1.1);
+				meet.screenCenter();
+				sprites.add(meet);
+				add(meet);
+
 			case 'og':
 				curStage = 'og';
 				defaultCamZoom = 0.9;
