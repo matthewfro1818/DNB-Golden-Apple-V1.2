@@ -1052,6 +1052,64 @@ class PlayState extends MusicBeatState
 				sprites.add(meet);
 				add(meet);
 
+			case 'apprentice':
+				curStage = 'apprentice';
+				defaultCamZoom = 0.9;
+	
+				var apprenticesky:FlxSprite = new FlxSprite(-600, -300).loadGraphic(Paths.image('apprentice/sky', 'shared'));
+				sprites.add(apprenticesky);
+				apprenticesky.scale.set(0.9, 0.9);
+				add(apprenticesky);
+
+				var apprenticeclouds:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('apprentice/clouds', 'shared'));
+				sprites.add(apprenticeclouds);
+				add(apprenticeclouds);
+
+				var apprenticegrass:FlxSprite = new FlxSprite(-600, -100).loadGraphic(Paths.image('apprentice/grass', 'shared'));
+				sprites.add(apprenticegrass);
+				add(apprenticegrass);
+
+				var apprenticeprops:FlxSprite = new FlxSprite(-600, -300).loadGraphic(Paths.image('apprentice/props', 'shared'));
+				sprites.add(apprenticeprops);
+				add(apprenticeprops);
+
+				var tristan_crowd = new FlxSprite(500, 350);
+				tristan_crowd.frames = Paths.getSparrowAtlas('apprentice/tristan_crowd', 'shared');
+				tristan_crowd.animation.addByPrefix('idle', 'crowd', 24, false);
+				tristan_crowd.animation.play('idle');
+				tristan_crowd.scale.set(0.8, 0.8);
+				sprites.add(tristan_crowd);
+				add(tristan_crowd);
+
+				var davec = new FlxSprite(-300, 250);
+				davec.frames = Paths.getSparrowAtlas('apprentice/davec', 'shared');
+				davec.animation.addByPrefix('idle', 'crowd', 24, false);
+				davec.animation.play('idle');
+				davec.scale.set(0.8, 0.8);
+				sprites.add(davec);
+				add(davec);
+				
+				var trist:FlxSprite = new FlxSprite(-1475, -775).loadGraphic(Paths.image('trist/trist', 'shared'));
+				trist.visible = false;
+				var testshader2:Shaders.GlitchEffect = new Shaders.GlitchEffect();
+				testshader2.waveAmplitude = 0.1;
+				testshader2.waveFrequency = 5;
+				testshader2.waveSpeed = 2;
+				trist.shader = testshader2.shader;
+				trist.scale.set(3, 3);
+				sprites.add(trist);
+				add(trist);
+
+				var tristan_gang:FlxSprite = new FlxSprite(100, 130).loadGraphic(Paths.image('apprentice/tristan_gang', 'shared'));
+				tristan_gang.visible = false;
+				sprites.add(tristan_gang);
+				add(tristan_gang);
+
+				var daverson:FlxSprite = new FlxSprite(-375, 100).loadGraphic(Paths.image('apprentice/daverson', 'shared'));
+				daverson.visible = false;
+				sprites.add(daverson);
+				add(daverson);
+		
 			case 'og':
 				curStage = 'og';
 				defaultCamZoom = 0.9;
